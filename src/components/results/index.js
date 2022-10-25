@@ -1,13 +1,11 @@
 import React from 'react';
+import './results.scss';
 
-class Header extends React.Component {
-  render() {
+export default function Results(props) {
+  
     return (
-      <header>
-        <h1>RESTy</h1>
-      </header>
+      <section>
+        <pre>{props.data ? JSON.stringify(props.data, undefined, 2) : null}</pre>
+      </section>
     );
-  }
-}
-
-export default Header;
+  };
