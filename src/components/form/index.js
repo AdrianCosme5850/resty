@@ -7,9 +7,12 @@ import './form.scss';
 export default function Form(props){
   function handleSubmit(e) {
     e.preventDefault();
+    console.log();
+    console.log()
+    console.lg
     const formData = {
-      method:'GET',
-      url: 'https://pokeapi.co/api/v2/pokemon',
+      method: e.target.elements.method.value,
+      url: e.target.elements.url.value,
     };
     props.handleApiCall(formData);
   }
@@ -18,15 +21,17 @@ export default function Form(props){
         <form onSubmit={handleSubmit}>
           <label >
             <span>URL: </span>
-            <input name='url' type='text' />
-            <button type="submit">GO!</button>
+            <input data-testid='inputForm' name='url' type='text' />
+            <button data-testid='submitButton' type="submit">GO!</button>
           </label>
-          <label className="methods">
-            <span id="get">GET</span>
-            <span id="post">POST</span>
-            <span id="put">PUT</span>
-            <span id="delete">DELETE</span>
-          </label>
+            <input type='radio' id="get" name='method' value='GET'></input>
+            <label>GET</label>
+            <input type='radio' id="post" name='method' value='POST'></input>
+            <label >POST</label>
+            <input type='radio' id="put" name='method' value='PUT'></input>
+            <label>PUT</label>
+            <input type='radio' id="delete" name='method' value='DELETE'></input>
+            <label >DELETE</label>
         </form>
       </>
     );
