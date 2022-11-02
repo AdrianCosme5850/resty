@@ -7,9 +7,6 @@ import './form.scss';
 export default function Form(props){
   function handleSubmit(e) {
     e.preventDefault();
-    console.log();
-    console.log()
-    console.lg
     const formData = {
       method: e.target.elements.method.value,
       url: e.target.elements.url.value,
